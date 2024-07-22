@@ -1,0 +1,10 @@
+from app import db
+
+class Donation(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    item = db.Column(db.String(100), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
+    donor = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return f'<Donation {self.item}>'

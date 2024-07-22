@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donation Management</title>
+  </head>
+  <body>
+    <h1>Donation Management</h1>
+
+    <form action="/add" method="post">
+      <input type="text" name="item" placeholder="Item" required />
+      <input type="number" name="quantity" placeholder="Quantity" required />
+      <input type="text" name="donor" placeholder="Donor" required />
+      <button type="submit">Add Donation</button>
+    </form>
+
+    <h2>Donations List</h2>
+    <ul>
+      {% for donation in donations %}
+      <li>
+        {{ donation.item }} - {{ donation.quantity }} - Donated by {{
+        donation.donor }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
